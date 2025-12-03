@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 292 84% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 60% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 292 84% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 292 84% 61%;
+
+    --radius: 0.5rem;
+
+    /* Custom Opium colors */
+    --opium-magenta: 292 84% 61%;
+    --opium-pink: 330 85% 60%;
+    --opium-purple: 280 70% 40%;
+    --opium-dark: 0 0% 4%;
+    --opium-gold: 45 90% 55%;
+    
+    /* Gradients */
+    --gradient-magenta: linear-gradient(135deg, hsl(292 84% 61%) 0%, hsl(330 85% 60%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 4%) 100%);
+    --gradient-radial-magenta: radial-gradient(ellipse at center, hsl(292 84% 61% / 0.3) 0%, transparent 70%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(292 84% 61% / 0.4);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-wide;
+  }
+}
+
+@layer components {
+  .gradient-radial-magenta {
+    background: radial-gradient(ellipse at center, hsl(292 84% 61% / 0.25) 0%, transparent 60%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(292 84% 61%) 0%, hsl(330 85% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-outline-white {
+    @apply border border-white/80 text-white px-6 py-2.5 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-white hover:text-background;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-2.5 text-sm font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-primary/90;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(180deg, hsl(0 0% 0% / 0.3) 0%, hsl(0 0% 0% / 0.5) 100%);
+  }
+
+  .section-glow {
+    position: relative;
+  }
+
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, hsl(292 84% 61% / 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .card-event {
+    @apply relative overflow-hidden rounded-lg bg-card transition-all duration-500;
+  }
+
+  .card-event:hover {
+    @apply shadow-[0_0_40px_hsl(292_84%_61%_/_0.3)];
+  }
+
+  .image-zoom {
+    @apply overflow-hidden;
+  }
+
+  .image-zoom img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .image-zoom:hover img {
+    @apply scale-110;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 20px hsl(0 0% 0% / 0.8);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
