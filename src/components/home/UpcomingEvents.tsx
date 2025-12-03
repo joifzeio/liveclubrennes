@@ -7,8 +7,22 @@ import adoreImg from "@/assets/events/adore-28nov.png";
 import jewellImg from "@/assets/events/jewell-29nov.png";
 import overqueenImg from "@/assets/events/overqueen-15dec.png";
 import tonusHustlerImg from "@/assets/events/tonus-4dec.png";
+import etudianteImg from "@/assets/events/etudiante-11dec.png";
 
 const events = [
+  {
+    date: "11",
+    day: "Jeu",
+    dayEn: "Thu",
+    month: "Déc",
+    year: 2025,
+    time: "23:55 - 06:00",
+    genre: "Hip Hop / Afro",
+    title: "L'étudiante : Hustler (R2) + Cayz'm & Florent G (R1)",
+    image: etudianteImg,
+    price: "6,59 €",
+    ticketUrl: "https://shotgun.live/fr/events/tonus-hustler-r-2-cayz-m-florent-g-r-1",
+  },
   {
     date: "27",
     day: "Jeu",
@@ -48,19 +62,7 @@ const events = [
     price: "11,59 €",
     ticketUrl: "https://shotgun.live/fr/events/dj-jewell-au-live-club",
   },
-  {
-    date: "04",
-    day: "Jeu",
-    dayEn: "Thu",
-    month: "Déc",
-    year: 2025,
-    time: "23:55 - 07:00",
-    genre: "Hip Hop / Afro",
-    title: "Tonus : Hustler (R2) + Cayz'm & Florent G (R1)",
-    image: tonusHustlerImg,
-    price: "6,59 €",
-    ticketUrl: "https://shotgun.live/fr/events/tonus-hustler-r-2-cayz-m-florent-g-r-1",
-  },
+
   {
     date: "15",
     day: "Lun",

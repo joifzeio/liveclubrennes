@@ -10,6 +10,7 @@ import adoreImg from "@/assets/events/adore-28nov.png";
 import jewellImg from "@/assets/events/jewell-29nov.png";
 import overqueenImg from "@/assets/events/overqueen-15dec.png";
 import tonusHustlerImg from "@/assets/events/tonus-4dec.png";
+import etudianteImg from "@/assets/events/etudiante-11dec.png";
 import calendarHeroImg from "@/assets/social/social-2.jpeg";
 
 interface Event {
@@ -31,6 +32,22 @@ interface Event {
 
 // All events from Shotgun - past and upcoming
 const allEvents: Event[] = [
+  {
+    date: 11,
+    month: 11, // December
+    year: 2025,
+    day: "Jeu",
+    dayEn: "Thu",
+    monthName: "Déc",
+    monthNameEn: "Dec",
+    title: "L'étudiante : Hustler (R2) + Cayz'm & Florent G (R1)",
+    time: "23:55 - 06:00",
+    genre: "HIP HOP / AFRO",
+    image: etudianteImg,
+    price: "6,59 €",
+    ticketUrl: "https://shotgun.live/fr/events/tonus-hustler-r-2-cayz-m-florent-g-r-1",
+    isPast: false
+  },
   {
     date: 27,
     month: 10, // November (0-indexed)
@@ -79,22 +96,7 @@ const allEvents: Event[] = [
     ticketUrl: "https://shotgun.live/fr/events/dj-jewell-au-live-club",
     isPast: true
   },
-  {
-    date: 4,
-    month: 11, // December
-    year: 2025,
-    day: "Jeu",
-    dayEn: "Thu",
-    monthName: "Déc",
-    monthNameEn: "Dec",
-    title: "Tonus : Hustler (R2) + Cayz'm & Florent G (R1)",
-    time: "23:55 - 07:00",
-    genre: "HIP HOP / AFRO",
-    image: tonusHustlerImg, // Using placeholder
-    price: "6,59 €",
-    ticketUrl: "https://shotgun.live/fr/events/tonus-hustler-r-2-cayz-m-florent-g-r-1",
-    isPast: false
-  },
+
   {
     date: 15,
     month: 11, // December
@@ -320,15 +322,15 @@ const Calendrier = () => {
 
           {/* Events Grid */}
           {filteredEvents.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredEvents.map((event, index) => (
                 <div
                   key={index}
                   className={`card-event group animate-fade-up ${event.isPast ? "opacity-70" : ""}`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <div className="image-zoom aspect-[3/4] relative">
-                    <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+                  <div className="image-zoom relative w-full">
+                    <img src={event.image} alt={event.title} className="w-full h-auto" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
                     {/* Past Event Badge */}
