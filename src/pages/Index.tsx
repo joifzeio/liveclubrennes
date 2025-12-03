@@ -6,9 +6,11 @@ import SectionCard from "@/components/home/SectionCard";
 import SocialSection from "@/components/home/SocialSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-import hiphopMc2Img from "@/assets/club/hiphop_mc2.jpg";
+import clubMcImg from "@/assets/club/hiphop_mc2.jpg";
+import clubMcVerticalImg from "@/assets/club/club_mc_vertical.jpg";
 import crowdImg from "@/assets/club/crowd_dancing.jpg";
 import bottlesImg from "@/assets/club/bottles_service.jpg";
+import barTapsImg from "@/assets/club/bar_taps.png";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -23,7 +25,7 @@ const Index = () => {
       <SectionCard
         title={t("club.title")}
         description={t("club.description")}
-        image={hiphopMc2Img}
+        image={clubMcVerticalImg}
         link="/club"
         linkText={t("club.cta")}
       />
@@ -32,11 +34,9 @@ const Index = () => {
       <SectionCard
         title={t("bar.title")}
         description={t("bar.description")}
-        image={crowdImg}
+        image={barTapsImg}
         link="/bar"
         linkText={t("bar.cta")}
-        secondaryLink="/bar"
-        secondaryLinkText={t("bar.menu")}
         reversed
       />
 

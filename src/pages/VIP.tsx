@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/ui/PageHero";
 import { useLanguage } from "@/contexts/LanguageContext";
 import mainVipPic from "@/assets/vip/mainvippic.jpeg";
+import belaireImg from "@/assets/vip/belaire_service.jpg";
 
 const VIP = () => {
   const { t } = useLanguage();
@@ -22,11 +23,6 @@ const VIP = () => {
       name: t("vip.area.cave"),
       description: t("vip.area.cave.desc"),
       capacity: t("vip.area.cave.capacity"),
-    },
-    {
-      name: t("vip.area.terrace"),
-      description: t("vip.area.terrace.desc"),
-      capacity: t("vip.area.terrace.capacity"),
     },
   ];
 
@@ -52,7 +48,7 @@ const VIP = () => {
               </div>
               <div className="image-zoom rounded-2xl overflow-hidden aspect-[3/4] mt-8">
                 <img
-                  src={mainVipPic}
+                  src={belaireImg}
                   alt="VIP Experience"
                   className="w-full h-full object-cover"
                 />
@@ -121,7 +117,7 @@ const VIP = () => {
                 {t("vip.custom.cta")}
               </Link>
             </div>
-            
+
             <div className="image-zoom rounded-2xl overflow-hidden">
               <img
                 src={mainVipPic}

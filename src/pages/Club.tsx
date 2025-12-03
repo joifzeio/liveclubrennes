@@ -3,6 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import { useLanguage } from "@/contexts/LanguageContext";
 import clubHeroImg from "@/assets/social/social-4.jpeg";
 import hiphopMcImg from "@/assets/club/hiphop_mc.jpg";
+import electroCrowdImg from "@/assets/club/electro_crowd.jpg";
 import crowdImg from "@/assets/club/crowd_dancing.jpg";
 import djImg from "@/assets/club/dj_electro.jpg";
 import gallery1Img from "@/assets/social/social-10.jpeg";
@@ -21,7 +22,7 @@ const Club = () => {
     {
       title: t("rooms.lounge.title"),
       description: t("rooms.lounge.desc"),
-      image: crowdImg,
+      image: electroCrowdImg,
     },
     {
       title: t("rooms.cave.title"),

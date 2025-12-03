@@ -1,6 +1,7 @@
 import { Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+import djGreenLight from "@/assets/social/dj_green_light.jpg";
 import social1 from "@/assets/social/social-1.jpeg";
 import social2 from "@/assets/social/social-2.jpeg";
 import social3 from "@/assets/social/social-3.jpeg";
@@ -14,6 +15,7 @@ import social11 from "@/assets/social/social-11.jpeg";
 import social12 from "@/assets/social/social-12.jpeg";
 
 const instagramPosts = [
+  djGreenLight,
   social1,
   social2,
   social3,
