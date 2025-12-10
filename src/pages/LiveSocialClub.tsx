@@ -2,7 +2,9 @@ import Layout from "@/components/layout/Layout";
 import PageHero from "@/components/ui/PageHero";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-import thumbnailEp3 from "@/assets/social/thumbnail_ep3.png";
+import thumbnailEp1 from "@/assets/social/thumbnail_1.jpg";
+import thumbnailEp2 from "@/assets/social/thumbnail_2.jpg";
+import thumbnailEp3 from "@/assets/social/thumbnail_3.jpg";
 
 const LiveSocialClub = () => {
     const { language } = useLanguage();
@@ -13,14 +15,14 @@ const LiveSocialClub = () => {
             title: "Episode 1",
             guest: "DJ SEROM",
             video: "/videos/episodes/episode1.mp4",
-            thumbnail: "/videos/episodes/thumbnail_ep1.png",
+            thumbnail: thumbnailEp1,
         },
         {
             id: 2,
             title: "Episode 2",
             guest: "SiiNA",
             video: "/videos/episodes/episode2.mp4",
-            thumbnail: "/videos/episodes/thumbnail_ep2.jpg",
+            thumbnail: thumbnailEp2,
         },
         {
             id: 3,
