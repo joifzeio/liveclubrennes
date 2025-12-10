@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Loader2, Upload, LogOut, Image } from "lucide-react";
 
@@ -148,6 +149,11 @@ const Auth = () => {
     toast({
       title: t("gallery.uploadSuccess"),
       description: t("gallery.uploadSuccessDesc"),
+      action: (
+        <ToastAction altText="View Gallery" onClick={() => navigate("/gallery")}>
+          {t("auth.viewGallery")}
+        </ToastAction>
+      ),
     });
 
     setIsUploading(false);

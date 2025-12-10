@@ -66,7 +66,7 @@ const VIP = () => {
               <p className="text-muted-foreground text-lg mb-8">
                 {t("vip.level.description")}
               </p>
-              <Link to="/calendrier" className="btn-outline-white rounded-full">
+              <Link to="/agenda" className="btn-outline-white rounded-full">
                 {t("vip.calendar.cta")}
               </Link>
             </div>
@@ -113,7 +113,7 @@ const VIP = () => {
               <p className="text-muted-foreground text-lg mb-8">
                 {t("vip.custom.description")}
               </p>
-              <Link to="/calendrier" className="btn-outline-white rounded-full">
+              <Link to="/agenda" className="btn-outline-white rounded-full">
                 {t("vip.custom.cta")}
               </Link>
             </div>
@@ -147,7 +147,7 @@ const VIP = () => {
           <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
             {t("vip.ready.description")}
           </p>
-          <Link to="/calendrier" className="btn-outline-white rounded-full">
+          <Link to="/agenda" className="btn-outline-white rounded-full">
             {t("vip.ready.cta")}
           </Link>
         </div>

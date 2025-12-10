@@ -1,9 +1,9 @@
 import Layout from "@/components/layout/Layout";
 import Hero from "@/components/home/Hero";
 import UpcomingEvents from "@/components/home/UpcomingEvents";
-import NewYearSection from "@/components/home/NewYearSection";
 import SectionCard from "@/components/home/SectionCard";
 import SocialSection from "@/components/home/SocialSection";
+import LocationSection from "@/components/home/LocationSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 import clubMcImg from "@/assets/club/hiphop_mc2.jpg";
@@ -19,7 +19,6 @@ const Index = () => {
     <Layout>
       <Hero />
       <UpcomingEvents />
-      <NewYearSection />
 
       {/* Club Section */}
       <SectionCard
@@ -49,6 +48,7 @@ const Index = () => {
         linkText={t("vip.cta")}
       />
 
+      <LocationSection />
       <SocialSection />
     </Layout>
   );

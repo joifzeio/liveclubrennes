@@ -12,11 +12,11 @@ const translations = {
   fr: {
     // Navigation
     "nav.home": "Accueil",
-    "nav.calendar": "Calendrier",
+    "nav.calendar": "Agenda",
     "nav.club": "Club",
     "nav.bar": "Bar",
     "nav.vip": "VIP",
-    "nav.tickets": "Billets & Tables VIP",
+    "nav.tickets": "Agenda",
     "nav.reservations": "Bar et Réservations",
 
     // Hero
@@ -26,7 +26,10 @@ const translations = {
     // Upcoming Events
     "events.title": "Événements à venir",
     "events.viewAll": "Voir le calendrier complet",
-    "events.tickets": "Billets & Tables VIP",
+    "events.title": "Événements à venir",
+    "events.viewAll": "Voir le calendrier complet",
+    "events.tickets": "Agenda",
+    "events.cardCta": "Billetterie",
 
     // New Year
     "newyear.title": "Nouvel An 2026",
@@ -84,7 +87,7 @@ const translations = {
     "social.follow": "Suivre sur Instagram",
 
     // Calendar
-    "calendar.title": "Calendrier",
+    "calendar.title": "Agenda",
     "calendar.search": "Rechercher",
     "calendar.days": ["LU", "MA", "ME", "JE", "VE", "SA", "DI"],
 
@@ -95,9 +98,17 @@ const translations = {
     "footer.club.hours": "Club : 23h00 - 06h00",
     "footer.bar.hours": "Bar : 18h00 - 03h00",
     "footer.legal": "Mentions Légales",
-    "footer.privacy": "Politique de Confidentialité",
+    "footer.privacy": "Protection des données",
+    "footer.cgv": "CGV",
+    "footer.cgb": "CG Billetterie",
     "footer.cookies": "Cookies",
     "footer.copyright": "© 2024 LiveClub Rennes. Tous droits réservés.",
+
+    // Legal Pages
+    "legal.notice.title": "Mentions Légales",
+    "legal.privacy.title": "Protection des données",
+    "legal.cgv.title": "Conditions Générales de Vente",
+    "legal.cgb.title": "Conditions Générales de Billetterie",
 
     // Gallery
     "nav.gallery": "Galerie",
@@ -133,6 +144,15 @@ const translations = {
     "auth.viewGallery": "Voir la galerie",
     "auth.notAdmin": "Vous n'avez pas les droits d'administrateur.",
 
+    // Location
+    "location.title": "Venir au LiveClub",
+    "location.subtitle": "Situé en plein cœur de Rennes, profitez d'un accès simple quel que soit votre mode de transport.",
+    "location.help": "Aide",
+    "location.transport.title": "Métro & Bus",
+    "location.train.title": "Gare SNCF",
+    "location.parking.title": "Parking",
+    "location.bike.title": "Vélo Star",
+
     // Rooms
     "rooms.main.title": "Hip Hop",
     "rooms.main.desc": "Le meilleur du son urbain, Hip-Hop et RnB pour une ambiance survoltée toute la nuit.",
@@ -155,11 +175,11 @@ const translations = {
   en: {
     // Navigation
     "nav.home": "Home",
-    "nav.calendar": "Calendar",
+    "nav.calendar": "Agenda",
     "nav.club": "Club",
     "nav.bar": "Bar",
     "nav.vip": "VIP",
-    "nav.tickets": "Tickets & VIP Tables",
+    "nav.tickets": "Agenda",
     "nav.reservations": "Bar and Reservations",
 
     // Hero
@@ -169,7 +189,10 @@ const translations = {
     // Upcoming Events
     "events.title": "Upcoming Events",
     "events.viewAll": "View full calendar",
-    "events.tickets": "Tickets & VIP Tables",
+    "events.title": "Upcoming Events",
+    "events.viewAll": "View full calendar",
+    "events.tickets": "Agenda",
+    "events.cardCta": "Tickets",
 
     // New Year
     "newyear.title": "New Year's Eve 2026",
@@ -227,7 +250,7 @@ const translations = {
     "social.follow": "Follow on Instagram",
 
     // Calendar
-    "calendar.title": "Calendar",
+    "calendar.title": "Agenda",
     "calendar.search": "Search",
     "calendar.days": ["MO", "TU", "WE", "TH", "FR", "SA", "SU"],
 
@@ -239,8 +262,16 @@ const translations = {
     "footer.bar.hours": "Bar: 6:00 PM - 3:00 AM",
     "footer.legal": "Legal Notice",
     "footer.privacy": "Privacy Policy",
+    "footer.cgv": "Terms of Sale",
+    "footer.cgb": "Ticket Terms",
     "footer.cookies": "Cookies",
     "footer.copyright": "© 2024 LiveClub Rennes. All rights reserved.",
+
+    // Legal Pages
+    "legal.notice.title": "Legal Notice",
+    "legal.privacy.title": "Privacy Policy",
+    "legal.cgv.title": "Terms of Sale",
+    "legal.cgb.title": "Ticket Terms",
 
     // Gallery
     "nav.gallery": "Gallery",
@@ -274,7 +305,16 @@ const translations = {
     "auth.uploadDesc": "Add photos to the gallery. They will be visible immediately.",
     "auth.uploading": "Uploading...",
     "auth.viewGallery": "View Gallery",
-    "auth.notAdmin": "You don't have admin privileges.",
+    "auth.notAdmin": "You do not have admin rights.",
+
+    // Location
+    "location.title": "Getting to LiveClub",
+    "location.subtitle": "Located in the heart of Rennes, enjoy easy access whatever your mode of transport.",
+    "location.help": "Help",
+    "location.transport.title": "Metro & Bus",
+    "location.train.title": "Train Station",
+    "location.parking.title": "Parking",
+    "location.bike.title": "Bike",
 
     // Rooms
     "rooms.main.title": "Hip Hop",

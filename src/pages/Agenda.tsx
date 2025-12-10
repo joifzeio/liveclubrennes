@@ -11,6 +11,9 @@ import jewellImg from "@/assets/events/jewell-29nov.png";
 import overqueenImg from "@/assets/events/overqueen-15dec.png";
 import tonusHustlerImg from "@/assets/events/tonus-4dec.png";
 import etudianteImg from "@/assets/events/etudiante-11dec.png";
+import etudianteV2Img from "@/assets/events/etudiante-11dec-2.png";
+import nocturneImg from "@/assets/events/nocturne-12dec.png";
+import throneImg from "@/assets/events/throne-13dec.png";
 import calendarHeroImg from "@/assets/social/social-2.jpeg";
 
 interface Event {
@@ -43,9 +46,41 @@ const allEvents: Event[] = [
     title: "L'étudiante : Hustler (R2) + Cayz'm & Florent G (R1)",
     time: "23:55 - 06:00",
     genre: "HIP HOP / AFRO",
-    image: etudianteImg,
+    image: etudianteV2Img,
     price: "6,59 €",
-    ticketUrl: "https://shotgun.live/fr/events/tonus-hustler-r-2-cayz-m-florent-g-r-1",
+    ticketUrl: "https://shotgun.live/fr/events/tonus-hustler-r-1-ma-nu-florent-g",
+    isPast: false
+  },
+  {
+    date: 12,
+    month: 11, // December
+    year: 2025,
+    day: "Ven",
+    dayEn: "Fri",
+    monthName: "Déc",
+    monthNameEn: "Dec",
+    title: "La Nocturne : Sylvain De France + Kidd Midas & KLR",
+    time: "23:55 - 06:00",
+    genre: "100% RAP FRANÇAIS",
+    image: nocturneImg,
+    price: "6,59 €",
+    ticketUrl: "https://shotgun.live/fr/events/la-nocturne-sylvain-2-france-kidd-midas-klr-ma-nu",
+    isPast: false
+  },
+  {
+    date: 13,
+    month: 11, // December
+    year: 2025,
+    day: "Sam",
+    dayEn: "Sat",
+    monthName: "Déc",
+    monthNameEn: "Dec",
+    title: "The Throne : DJ Folyne + Cube Winter",
+    time: "23:55 - 06:00",
+    genre: "HIP HOP / ELECTRO",
+    image: throneImg,
+    price: "6,59 €",
+    ticketUrl: "https://shotgun.live/fr/events/the-throne-dj-folyne-cube-winte-ma-nu-florent-g",
     isPast: false
   },
   {
@@ -120,9 +155,10 @@ const monthNames = {
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 };
 
-const Calendrier = () => {
-  const [currentMonth, setCurrentMonth] = useState(10); // November (0-indexed)
-  const [currentYear, setCurrentYear] = useState(2025);
+const Agenda = () => {
+  const today = new Date();
+  const [currentMonth, setCurrentMonth] = useState(today.getMonth());
+  const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -132,6 +168,9 @@ const Calendrier = () => {
 
   // Generate calendar days for current month
   const calendarDays = useMemo(() => {
+    // Check if we are viewing past months/years relative to today to possibly disable calendar features?
+    // For now standard calendar generation is fine.
+
     const firstDay = new Date(currentYear, currentMonth, 1);
     const lastDay = new Date(currentYear, currentMonth + 1, 0);
     const startingDayOfWeek = firstDay.getDay(); // 0 = Sunday
@@ -206,15 +245,40 @@ const Calendrier = () => {
   };
 
   // Filter events for current month view
-  const currentMonthEvents = allEvents.filter(
-    event => event.month === currentMonth && event.year === currentYear
-  );
+  // Only show events that are >= today for the current month view
+  // But if user browses future months, show all. If past months, show none?
+  // User said "events that he needs to see are the ones later then the day he is in the site"
+  // This implies if I look at "November" (past), everything is past, so maybe I shouldn't see them or they should remain but "Agenda" usually implies upcoming.
+  // However, often users want to see history.
+  // The request is specific: "see... ones later then the day he is in".
+  // I will strictly filter out any event where eventDate < todayDate.
+
+  const currentMonthEvents = allEvents.filter(event => {
+    // 1. Must be in the selected month/year
+    if (event.month !== currentMonth || event.year !== currentYear) return false;
+
+    // 2. If the selected month is the *current* real-time month, hide past days.
+    const now = new Date();
+    // Reset time to midnight for accurate comparison
+    const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const eventDate = new Date(event.year, event.month, event.date);
+
+    // If event is strictly in the past (before today), hide it?
+    // User: "later then the day he is in".
+    // Does "later than" mean > or >=? "Later than the day" could strictly mean tomorrow. 
+    // Usually "upcoming" includes tonight. I will assume >= today.
+
+    // Simplest logic:
+    // If the event date is < today, return false.
+    if (eventDate < todayMidnight) return false;
+
+    return true;
+  });
 
   const filteredEvents = currentMonthEvents.filter((event) =>
     event.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const today = new Date();
   const isToday = (day: number, month: number, year: number) =>
     day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
 
@@ -464,4 +528,4 @@ const Calendrier = () => {
   );
 };
 
-export default Calendrier;
+export default Agenda;

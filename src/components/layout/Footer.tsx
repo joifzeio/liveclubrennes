@@ -38,7 +38,7 @@ const Footer = () => {
             <h3 className="text-white font-semibold tracking-wider mb-4 uppercase text-sm">{t("footer.explore")}</h3>
             <ul className="space-y-2">
               {[
-                { to: "/calendrier", label: t("nav.calendar") },
+                { to: "/agenda", label: t("nav.calendar") },
                 { to: "/club", label: t("nav.club") },
                 { to: "/bar", label: t("nav.bar") },
                 { to: "/vip", label: t("nav.vip") },
@@ -70,23 +70,25 @@ const Footer = () => {
             <h3 className="text-white font-semibold tracking-wider mb-4 uppercase text-sm">{t("footer.hours")}</h3>
             <ul className="space-y-2 text-white/60 text-sm">
               <li>{t("footer.club.hours")}</li>
-              <li>{t("footer.bar.hours")}</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">{t("footer.copyright")}</p>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="text-white/40 hover:text-primary transition-colors">
+          <div className="flex gap-6 text-sm flex-wrap justify-end">
+            <Link to="/mentions-legales" className="text-white/40 hover:text-primary transition-colors">
               {t("footer.legal")}
-            </a>
-            <a href="#" className="text-white/40 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/protection-donnees" className="text-white/40 hover:text-primary transition-colors">
               {t("footer.privacy")}
-            </a>
-            <a href="#" className="text-white/40 hover:text-primary transition-colors">
-              {t("footer.cookies")}
-            </a>
+            </Link>
+            <Link to="/cgv" className="text-white/40 hover:text-primary transition-colors">
+              {t("footer.cgv")}
+            </Link>
+            <Link to="/billetterie-cgv" className="text-white/40 hover:text-primary transition-colors">
+              {t("footer.cgb")}
+            </Link>
           </div>
         </div>
       </div>

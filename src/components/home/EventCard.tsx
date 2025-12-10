@@ -1,3 +1,6 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Ticket } from "lucide-react";
+
 interface EventCardProps {
   date: string;
   day: string;
@@ -11,6 +14,8 @@ interface EventCardProps {
 }
 
 const EventCard = ({ date, day, month, time, genre, title, image, price, ticketUrl }: EventCardProps) => {
+  const { t } = useLanguage();
+
   return (
     <div className="card-event group">
       <div className="image-zoom relative w-full">
@@ -49,9 +54,10 @@ const EventCard = ({ date, day, month, time, genre, title, image, price, ticketU
           href={ticketUrl || "https://shotgun.live/fr/venues/liveclub-rennes"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-4 text-sm font-semibold text-white uppercase tracking-widest hover:text-primary transition-colors"
+          className="inline-flex items-center gap-2 mt-4 px-6 py-2 bg-[#b30000] hover:bg-[#800000] text-white text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(179,0,0,0.4)] hover:shadow-[0_0_25px_rgba(179,0,0,0.6)]"
         >
-          Tickets & VIP Tables →
+          <Ticket className="w-4 h-4" />
+          {t("events.cardCta")}
         </a>
       </div>
     </div>

@@ -145,7 +145,7 @@ const Bar = () => {
           <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
             {t("bar.reserve.description")}
           </p>
-          <Link to="/calendrier" className="btn-outline-white rounded-full">
+          <Link to="/agenda" className="btn-outline-white rounded-full">
             {t("bar.reserve.cta")}
           </Link>
         </div>

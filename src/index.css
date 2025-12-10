@@ -42,12 +42,12 @@
     --opium-purple: 280 70% 40%;
     --opium-dark: 0 0% 4%;
     --opium-gold: 45 90% 55%;
-    
+
     /* Gradients */
     --gradient-magenta: linear-gradient(135deg, hsl(292 84% 61%) 0%, hsl(330 85% 60%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 4%) 100%);
     --gradient-radial-magenta: radial-gradient(ellipse at center, hsl(292 84% 61% / 0.3) 0%, transparent 70%);
-    
+
     /* Shadows */
     --shadow-glow: 0 0 60px hsl(292 84% 61% / 0.4);
     --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
@@ -72,7 +72,12 @@
     @apply bg-background text-foreground font-montserrat antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-wide;
   }
 }
@@ -139,6 +144,20 @@
 }
 
 @layer utilities {
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
   .text-shadow {
     text-shadow: 0 2px 20px hsl(0 0% 0% / 0.8);
   }
@@ -160,6 +179,7 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -170,6 +190,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -180,15 +201,30 @@
       opacity: 0;
       transform: scale(0.95);
     }
+
     to {
       opacity: 1;
       transform: scale(1);
     }
   }
 
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 }

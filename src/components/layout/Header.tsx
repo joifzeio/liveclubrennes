@@ -49,7 +49,7 @@ const Header = () => {
           {/* Right Side Navigation */}
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-4">
-              <Link to="/calendrier" className="btn-outline-white rounded-full text-xs">
+              <Link to="/agenda" className="btn-outline-white rounded-full text-xs">
                 {t("nav.tickets")}
               </Link>
               <Link to="/bar" className="btn-outline-white rounded-full text-xs">
@@ -76,14 +76,14 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 top-20 bg-background/98 backdrop-blur-lg transition-all duration-500 ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 top-20 bg-black/60 backdrop-blur-xl transition-all duration-500 ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       >
         <nav className="container mx-auto px-8 py-12">
           <ul className="space-y-8">
             {[
               { to: "/", label: t("nav.home") },
-              { to: "/calendrier", label: t("nav.calendar") },
+              { to: "/agenda", label: t("nav.calendar") },
               { to: "/club", label: t("nav.club") },
               { to: "/bar", label: t("nav.bar") },
               { to: "/vip", label: t("nav.vip") },
@@ -102,7 +102,7 @@ const Header = () => {
             ))}
           </ul>
           <div className="mt-12 flex flex-col gap-4 lg:hidden">
-            <Link to="/calendrier" className="btn-outline-white rounded-full text-center">
+            <Link to="/agenda" className="btn-outline-white rounded-full text-center">
               {t("nav.tickets")}
             </Link>
             <Link to="/bar" className="btn-outline-white rounded-full text-center">
